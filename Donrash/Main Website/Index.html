@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don'Rash</title>
+
+    <link rel="icon" href="/Donrash/Gambar/icon-don'rash.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-poppins bg-cream text-black">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-pink-800 p-4 shadow-lg z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center text-2xl text-black">
+                <img src="/Donrash/Gambar/icon-don'rash.png" alt="Logo Don'Rash" class="w-10 h-10">
+                <h1>Don'<span class="text-cream">Rash</span></h1>
+            </a>
+            <button id="menu-toggle" class="text-white focus:outline-none md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <ul id="navbar" class="hidden md:flex space-x-4 text-lg font-semibold">
+                <li><a href="#Home" class="text-white hover:underline">Beranda</a></li>
+                <li><a href="#Product" class="text-white hover:underline">Produk</a></li>
+                <li><a href="/Donrash/About/AboutUs.html" class="text-white hover:underline">Tentang Kami</a></li>
+                <li><a href="#Contact" class="text-white hover:underline">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-pink-800 p-4">
+        <ul class="space-y-4 text-center">
+            <li><a href="#Home" class="text-white block hover:underline">Beranda</a></li>
+            <li><a href="#Product" class="text-white block hover:underline">Produk</a></li>
+            <li><a href="/Donrash/About/AboutUs.html" class="text-white block hover:underline">Tentang Kami</a></li>
+            <li><a href="#Contact" class="text-white block hover:underline">Kontak</a></li>
+        </ul>
+    </div>
+
+    <!-- Home Section -->
+    <section id="Home" class="min-h-screen bg-pink-300 flex items-center justify-center"> 
+        <div class="text-center">
+            <h1 class="text-4xl text-white mb-4">Jam Buka 09.00</h1>
+            <h1 class="text-4xl text-white mb-4">Jam Tutup 09.00</h1>
+            <p id="opening-hours" class="text-lg text-white mb-4"></p>
+            <h1 class="text-4xl text-white mb-4">Jam Sekarang</h1>
+            <p id="current-time" class="text-lg text-white mb-4"></p>
+            <h1 class="text-4xl text-black mb-4">Don'<span class="text-black">Rash</span></h1>
+            <p class="text-lg font-semibold text-white mb-4">Toko donat dengan kredibilitas rasa yang di atas rata-rata</p>
+            <a href="#cart" class="inline-block bg-pink-800 text-white py-2 px-6 rounded hover:bg-pink-900">Beli Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="Product" class="py-20 bg-cream">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-semibold mb-8">Produk</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Produk 1 -->
+                <div class="bg-pink-200 p-6 rounded-lg border border-black text-center">
+                    <img src="/Donrash/Gambar/Donrash (10).jpeg" alt="Tira miss u" class="w-48 mx-auto mb-4 rounded-full">
+                    <h1 class="text-xl font-semibold">Tira Miss U</h1>
+                    <p class="text-sm">Tira miss u, rasa yang tidak akan pernah terlupakan selamanya</p>
+                    <p class="font-bold">Harga: $16</p>
+                    <button class="mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" onclick="addToCart('Tira miss u', 16)">Masukkan ke Keranjang</button>
+                </div>
+                <!-- Produk 2 -->
+                <div class="bg-pink-200 p-6 rounded-lg border border-black text-center">
+                    <img src="/Donrash/Gambar/Donrash (9).jpeg" alt="Pagar Beton" class="w-48 mx-auto mb-4 rounded-full">
+                    <h1 class="text-xl font-semibold">Pagar Beton</h1>
+                    <p class="text-sm">Pagar beton merupakan varian termurah sekaligus yang paling disukai kuli bangunan</p>
+                    <p class="font-bold">Harga: $5</p>
+                    <button class="mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" onclick="addToCart('Pagar Beton', 5)">Masukkan ke Keranjang</button>
+                </div>
+                <!-- Produk 3 -->
+                <div class="bg-pink-200 p-6 rounded-lg border border-black text-center">
+                    <img src="/Donrash/Gambar/Donrash (8).jpeg" alt="Matcha cih" class="w-48 mx-auto mb-4 rounded-full">
+                    <h1 class="text-xl font-semibold">Matcha cih</h1>
+                    <p class="text-sm">Varian yang sangat disukai kaum hawa, Matcha cih hadir dengan rasa yang lebih pekat</p>
+                    <p class="font-bold">Harga: $20</p>
+                    <button class="mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" onclick="addToCart('Matcha cih', 20)">Masukkan ke Keranjang</button>
+                </div>
+                <!-- Produk 4 -->
+                <div class="bg-pink-200 p-6 rounded-lg border border-black text-center">
+                    <img src="/Donrash/Gambar/Donrash (7).jpeg" alt="Ang ang ang" class="w-48 mx-auto mb-4 rounded-full">
+                    <h1 class="text-xl font-semibold">Ang ang ang</h1>
+                    <p class="text-sm">Ang ang ang ang ang ang</p>
+                    <p class="font-bold">Harga: $14</p>
+                    <button class="mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" onclick="addToCart('Ang ang ang', 14)">Masukkan ke Keranjang</button>
+                </div>
+                <!-- Produk 5 -->
+                <div class="bg-pink-200 p-6 rounded-lg border border-black text-center">
+                    <img src="/Donrash/Gambar/Donrash (6).jpeg" alt="Slay Oh lay" class="w-48 mx-auto mb-4 rounded-full">
+                    <h1 class="text-xl font-semibold">Slay Oh lay</h1>
+                    <p class="text-sm">Rasanya yang slay, sangat dinikmati anak-anak</p>
+                    <p class="font-bold">Harga: $15</p>
+                    <button class="mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" onclick="addToCart('Slay Oh lay', 15)">Masukkan ke Keranjang</button>
+                </div>
+                <!-- Produk 6 -->
+                <div class="bg-pink-200 p-6 rounded-lg border border-black text-center">
+                    <img src="/Donrash/Gambar/Donrash (5).jpeg" alt="Amsterdam" class="w-48 mx-auto mb-4 rounded-full">
+                    <h1 class="text-xl font-semibold">Amsterdam</h1>
+                    <p class="text-sm">Coklat impor Amsterdam</p>
+                    <p class="font-bold">Harga: Rp.10.000</p>
+                    <button class="mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" onclick="addToCart('Amsterdam', 10)">Masukkan ke Keranjang</button>
+                </div>
+                <!-- Produk 7 -->
+                <div class="bg-pink-200 p-6 rounded-lg border border-black text-center">
+                    <img src="/Donrash/Gambar/Donrash (4).jpeg" alt="Coklat Basudara" class="w-48 mx-auto mb-4 rounded-full">
+                    <h1 class="text-xl font-semibold">Coklat Basudara</h1>
+                    <p class="text-sm">Varian coklat dengan kolaborasi Asep Basudara</p>
+                    <p class="font-bold">Harga: $10</p>
+                    <button class="mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" onclick="addToCart('Coklat Basudara', 10)">Masukkan ke Keranjang</button>
+                </div>
+                <!-- Produk 8 -->
+                <div class="bg-pink-200 p-6 rounded-lg border border-black text-center">
+                    <img src="/Donrash/Gambar/Donrash (3).jpeg" alt="Oreo Jamur" class="w-48 mx-auto mb-4 rounded-full">
+                    <h1 class="text-xl font-semibold">Oreo Jamur</h1>
+                    <p class="text-sm">Rasa jamur dan parutan oreo, dengan citarasa baru</p>
+                    <p class="font-bold">Harga: $19</p>
+                    <button class="mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" onclick="addToCart('Oreo Jamur', 19)">Masukkan ke Keranjang</button>
+                </div>
+                <!-- Produk 9 -->
+                <div class="bg-pink-200 p-6 rounded-lg border border-black text-center">
+                    <img src="/Donrash/Gambar/Donrash (2).jpeg" alt="Merah Merona" class="w-48 mx-auto mb-4 rounded-full">
+                    <h1 class="text-xl font-semibold">Merah Merona</h1>
+                    <p class="text-sm">Donat ini diselimuti selai strawberry yang sangat nikmat</p>
+                    <p class="font-bold">Harga: $12</p>
+                    <button class="mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" onclick="addToCart('Merah Merona', 12)">Masukkan ke Keranjang</button>
+                </div>
+                <!-- Produk 10 -->
+                <div class="bg-pink-200 p-6 rounded-lg border border-black text-center">
+                    <img src="/Donrash/Gambar/Donrash (1).jpeg" alt="Apple Lacoste" class="w-48 mx-auto mb-4 rounded-full">
+                    <h1 class="text-xl font-semibold">Apple Lacoste</h1>
+                    <p class="text-sm">Apple Lacoste merupakan donat dengan variasi rasa apple dan vanila</p>
+                    <p class="font-bold">Harga: $10</p>
+                    <button class="mt-4 bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700" onclick="addToCart('Apple Lacoste', 10)">Masukkan ke Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Section -->
+<section id="cart" class="py-20 bg-cream">
+    <div class="container mx-auto text-center">
+        <h1 class="text-3xl font-semibold mb-8">Keranjang Belanja</h1>
+        <div class="max-w-2xl mx-auto bg-pink-200 p-6 rounded-lg border border-black">
+            <ul id="cart-items" class="space-y-4 mb-6">
+                <!-- Cart items will be dynamically added here -->
+            </ul>
+            <div class="border-t border-black pt-4">
+                <p class="text-xl font-semibold mb-4">Total: $<span id="total-price">0</span></p>
+                <div class="flex justify-center space-x-4">
+                    <button 
+                        onclick="clearCart()" 
+                        class="bg-red-600 text-white py-2 px-6 rounded hover:bg-red-700 transition duration-300"
+                    >
+                        Hapus Keranjang
+                    </button>
+                    <button 
+                        id="checkout-btn" 
+                        onclick="checkout()" 
+                        class="bg-purple-600 text-white py-2 px-6 rounded hover:bg-purple-700 transition duration-300"
+                    >
+                        Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Success Message -->
+        <div 
+            id="success-message" 
+            class="hidden mt-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded"
+        >
+            Checkout berhasil! Terima kasih sudah berbelanja.
+        </div>
+    </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="Contact" class="py-20 bg-pink-300">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-semibold mb-8">Kontak</h1>
+            <div class="flex flex-col md:flex-row justify-center items-center">
+                <div class="flex-1 mb-6 md:mb-0">
+                    <h4>Telp: 08123123123</h4>
+                    <h4>WA: 091231314132</h4>
+                </div>
+                <div class="flex-1">
+                    <h4 class="text-xl font-semibold">Media Sosial</h4>
+                    <div class="flex justify-center space-x-4 mt-4">
+                        <a href="https://www.instagram.com/donrash_enak" target="_blank" class="bg-white border border-black rounded-lg py-2 px-4 hover:bg-gray-100">Instagram</a>
+                        <a href="https://www.tiktok.com/@_donrash?_t=8sSEUAMCbY2&_r=1" target="_blank" class="bg-white border border-black rounded-lg py-2 px-4 hover:bg-gray-100">TikTok</a>
+                    </div>
+                </div>
+            </div>
+            <p class="mt-8 text-black">&copy; 2024 Don'Rash</p>
+        </div>
+    </section>
+
+    <script src="Script.js"></script>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            document.getElementById('navbar').classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
